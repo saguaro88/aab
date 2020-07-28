@@ -176,6 +176,8 @@ class _MainScreenState extends State<MainScreen> {
   }
 
   void sortList() {
+    _selectedFilter = "Mana cost";
+    _selectedFilter2 = "Low-High";
     showModalBottomSheet(
         context: context,
         backgroundColor: Colors.transparent,
@@ -242,6 +244,7 @@ class _MainScreenState extends State<MainScreen> {
   }
 
   void filterList() {
+    _selectedFilter = "None";
     showModalBottomSheet(
         context: context,
         backgroundColor: Colors.transparent,
@@ -401,16 +404,12 @@ class _MainScreenState extends State<MainScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Container(
-                              height: 60,
-                              width: 150,
-                              margin: EdgeInsets.all(16),
+                              height: 100,
+                              width: 180,
+                              margin: EdgeInsets.all(2),
                               child: FlatButton(
-                                child: Text('Filter'),
-                                color: Colors.blueAccent,
+                                child: Image.asset('assets/filter.png'),
                                 textColor: Colors.white,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(30.0),
-                                    side: BorderSide(color: Colors.blueAccent)),
                                 onPressed: () {
                                   setState(() {
                                     filterList();
@@ -419,19 +418,11 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                             ),
                             Container(
-                              height: 60,
-                              width: 150,
-                              margin: EdgeInsets.all(20),
+                              height: 100,
+                              width: 180,
+                              margin: EdgeInsets.all(2),
                               child: FlatButton(
-                                child: Text(
-                                  'Sort',
-                                  style: TextStyle(),
-                                ),
-                                color: Colors.blueAccent,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(30.0),
-                                    side: BorderSide(color: Colors.blueAccent)),
-                                textColor: Colors.white,
+                                child: Image.asset("assets/sort.png"),
                                 onPressed: () => {sortList()},
                               ),
                             ),
